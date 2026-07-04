@@ -1,71 +1,461 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html{
+    scroll-behavior: smooth;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-header {
-    background-color: #1e3a8a;
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* Body */
+
+    body{
+    background:linear-gradient(-45deg,#2E1065,#5B21B6,#7C3AED,#9333EA);
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    padding-top:90px;
 }
 
-nav {
-    margin-top: 15px;
+@keyframes bgMove{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 15px;
-    font-size: 18px;
+/* Navigation Bar */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 60px;
+    background:rgba(46,16,101,0.65);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,0.15);
+    z-index:1000;
+}
+    
+
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
 }
 
-main {
-    text-align: center;
-    padding: 80px 20px;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:18px;
+    font-weight:600;
+    transition:0.3s;
 }
 
-h2 {
-    font-size: 40px;
-    color: #1e3a8a;
-    margin-bottom: 20px;
+nav a:hover{
+    color:#FFD700;
+    transform:translateY(-2px);
+}
+/* Hero Section */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-height:90vh;
+    padding:80px;
+    gap:50px;
 }
 
-p {
-    font-size: 20px;
-    color: #555;
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.6;
+
+.hero-text{
+    width:55%;
 }
 
-button {
-    margin-top: 30px;
-    padding: 12px 25px;
-    font-size: 18px;
-    border: none;
-    background-color: #1e3a8a;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 10px;
+.hero-text h1{
+    font-size:65px;
+    line-height:1.2;
+    margin-bottom:20px;
 }
 
-button:hover {
-    background-color: #2563eb;
+.hero-text p{
+    font-size:22px;
+    line-height:1.8;
+    margin-bottom:35px;
+    color:#F3E8FF;
 }
 
-footer {
-    background-color: #1e3a8a;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 80px;
+.hero-image img{
+    width:380px;
+    height:380px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid white;
+    box-shadow:0 0 40px rgba(168,85,247,.8);
+}
+
+.hero-image img:hover{
+    transform:scale(1.05) rotate(2deg);
+    box-shadow:0 0 60px rgba(236,72,153,0.9);
+}
+
+
+.btn{
+    display:inline-block;
+    background:linear-gradient(135deg,#A855F7,#7C3AED);
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:50px;
+    margin-right:15px;
+    font-weight:bold;
+    transition:0.3s ease;
+    box-shadow:0 8px 20px rgba(168,85,247,0.5);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(168,85,247,0.8);
+}/* About Section */
+
+.about{
+    padding:80px 50px;
+    text-align:center;
+}
+
+.about h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.about p{
+    font-size:20px;
+    line-height:1.8;
+    max-width:900px;
+    margin:0 auto 40px;
+}
+
+.about-cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    width:300px;
+    transition:0.3s ease;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(168,85,247,0.6);
+}
+
+.card h3{
+    margin-bottom:15px;
+    font-size:24px;
+}/* Services */
+
+.services{
+    padding:80px 50px;
+    text-align:center;
+}
+
+.services h2{
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.service-box{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    transition:.4s;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 40px rgba(168,85,247,.8);
+}
+
+.service-box h3{
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.service-box p{
+    font-size:17px;
+    line-height:1.7;
+}
+/* Courses */
+
+.courses{
+    padding:80px 50px;
+    text-align:center;
+}
+
+.courses h2{
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.courses .service-card{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    margin:20px auto;
+    max-width:700px;
+    transition:.4s;
+}
+
+.courses .service-card:hover{
+    transform:translateY(-10px);
+}
+/* Pricing */
+
+.pricing{
+    padding:80px 50px;
+    text-align:center;
+}
+
+.pricing h2{
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.pricing .service-card{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    margin:20px auto;
+    max-width:700px;
+    transition:.4s;
+}
+
+.pricing .service-card:hover{
+    transform:translateY(-10px);
+}
+/* Contact */
+
+.contact{
+    padding:80px 50px;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:42px;
+    margin-bottom:30px;
+}
+
+.contact p{
+    font-size:20px;
+    margin:15px 0;
+}
+
+.contact .btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 35px;
+    background:white;
+    color:#5B21B6;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.contact .btn:hover{
+    background:#E9D5FF;
+}
+/* Responsive Design */
+
+@media (max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+        text-align:center;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-text h1{
+        font-size:48px;
+    }
+
+    .hero-image img{
+        width:280px;
+        margin-top:30px;
+    }
+
+    .about-cards,
+    .service-container{
+        grid-template-columns:1fr;
+    }
+
+}
+/* Footer */
+
+footer{
+    background:#2E1065;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:60px;
+}
+
+footer p{
+    margin:8px 0;
+    font-size:16px;
+}
+/* Meet Rahul */
+
+.journey{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.journey-img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    box-shadow:0 0 30px rgba(168,85,247,.8);
+    margin:25px 0;
+}
+
+.journey h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.journey h3{
+    margin-bottom:20px;
+}
+
+.journey p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    font-size:18px;
+}
+/* Testimonials */
+
+.testimonials{
+    padding:80px 50px;
+    text-align:center;
+}
+
+.testimonials h2{
+    font-size:42px;
+    margin-bottom:40px;
+}
+
+.testimonial-card{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    padding:25px;
+    margin:20px auto;
+    max-width:700px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.testimonial-card h4{
+    margin-top:20px;
+    color:#FFD700;
+}
+.contact,
+.testimonials,
+.pricing,
+footer{
+    padding:80px 50px;
+    text-align:center;
+}
+
+footer{
+    margin-top:50px;
+    background:rgba(0,0,0,0.25);
+    padding:30px;
+}
+footer p{
+    margin:10px 0;
+}
+/* Scroll Animation */
+
+.hidden{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 1s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+/* WhatsApp Button */
+
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
 }
